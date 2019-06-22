@@ -1,9 +1,16 @@
 const express = require('express');
-const app = express();
-const mongoose = require('mongoose');
 
-const users = require('./routes/api/users')
-const members = require('./routes/api/members')
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+
+const users = require('./routes/api/users');
+const members = require('./routes/api/members');
+
+const app = express();
+
+//Body parser
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 
 //Database URL
 const db = require('./config/keys').mongoURL;
