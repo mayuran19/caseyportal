@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 //Load member model
-const Member = require('../../models/Member')
+const Member = require('../../models/Member');
 
 router.get("/test", (req, res) => res.json(
     {
